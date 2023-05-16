@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact List</title>
+  </head>
+  <body>
+    <h1>Contact List</h1>
+    <a href="/contacts/new">Add Contact</a>
+    <ul>
+      <% contacts.forEach(function(contact) { %>
+      <li>
+        <span><%= contact.name %></span> | <span><%= contact.email %></span> |
+        <span><%= contact.phone %></span>
+        <a href="/contacts/edit/<%= contact._id %>">Edit</a>
+        <a href="/contacts/delete/<%= contact._id %>">Delete</a>
+      </li>
+      <% }); %>
+    </ul>
+    <script>
+      console.log(<%- JSON.stringify(contacts) %>);
+    </script>
+  </body>
+</html>
